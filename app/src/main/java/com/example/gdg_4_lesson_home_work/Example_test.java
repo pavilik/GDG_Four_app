@@ -29,5 +29,44 @@ public class Example_test { //класс для процесса теста и �
 
         System.out.println("\n Плохой учитель:\n");
         bad_teacher.printjornal();
+
+    ////////////////Раздел тестирования Интерфейсов
+
+
+        Klass1 variant1 = new Klass1();
+        Klass2 variant2 = new Klass2();
+        Klass3 variant3 = new Klass3();
+
+
+        System.out.println( "\nЗадание №2 вывод результатов: ");
+
+        switch (variant1.getLovers()) {
+            case 2: variant1.getNameOfLovers();
+            break;
+            case 0:  System.out.println( "ОМГ, а так можно?");
+            break;
+            default:  System.out.println("что то  не так");
+
+        }
+
+        switch (variant2.getLovers()) {
+            case 2: variant2.getNameOfLovers();
+                break;
+            case 0:  System.out.println("ОМГ, а так можно?");
+                break;
+            default:  System.out.println("что то  не так");
+
+        }
+        switch (variant3.getLovers()) {
+            case 2: variant3.getNameOfLovers();
+                break;
+            case 0:  System.out.println("ОМГ, а так можно?");
+                break;
+            default:  System.out.println("что то  не так");
+
+        }
+
+
+
     }
 }
