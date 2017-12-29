@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">Gdg_4_lesson_home_work</string>
+    <string name="app_name">Домашнее задание №6</string>
+    <string name="nameauthActivity">Авторизация</string>
+    <string name="nameauthActivityKode">Авторизация</string>
+    <string name="enterumphontextview">Введите номер телефона</string>
+    <string name="textSocial">Войдите через социальную сеть</string>
+    <string name="buttonNext">Продолжить</string>
 </resources>
