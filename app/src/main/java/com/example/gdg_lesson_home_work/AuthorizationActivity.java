@@ -1,17 +1,14 @@
 package com.example.gdg_lesson_home_work;
 
-import android.annotation.TargetApi;
 import android.content.Intent;
 import android.net.Uri;
-import android.os.Build;
-import android.support.annotation.RequiresApi;
+import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.TextView;
 
 
 public class AuthorizationActivity extends AppCompatActivity {
@@ -21,13 +18,17 @@ public class AuthorizationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_authorization);
 
-        ActionBar actionBar =getSupportActionBar();
-        actionBar.setTitle("@string/nameauthActivityKode");
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
+
+        ActionBar ab = getSupportActionBar();
+        ab.setDisplayHomeAsUpEnabled(true);
+
 
         //объявление кнопки перехода на актвити 2
         Button nextActivityBtn = (Button) findViewById(R.id.buttonNext);
         //объявление интента 2й активити
-       final Intent startAuthKodeActivity = new Intent (this,AuthKodeActivity.class);
+        final Intent startAuthKodeActivity = new Intent(this, AuthKodeActivity.class);
 
 
         //объявление кнопок соц.сетей
@@ -51,7 +52,7 @@ public class AuthorizationActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Uri addressfb = Uri.parse("https://facebook.com");
-                Intent openlinkIntent = new Intent(Intent.ACTION_VIEW,addressfb);
+                Intent openlinkIntent = new Intent(Intent.ACTION_VIEW, addressfb);
                 startActivity(openlinkIntent);
             }
         });
@@ -60,7 +61,7 @@ public class AuthorizationActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Uri addressgg = Uri.parse("https://google.com");
-                Intent openlinkIntent = new Intent(Intent.ACTION_VIEW,addressgg);
+                Intent openlinkIntent = new Intent(Intent.ACTION_VIEW, addressgg);
                 startActivity(openlinkIntent);
             }
         });
