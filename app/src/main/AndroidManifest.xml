@@ -5,12 +5,11 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
         android:label="@string/nameauthActivity"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:screenOrientation="portrait"
-        >
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity android:name=".AuthorizationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,8 +22,11 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <activity android:name=".AuthKodeActivity"
-            android:parentActivityName=".AuthorizationActivity"
+        <activity
+            android:name=".KodeAuthActivity"
+            android:parentActivityName=".AuthorizationActivity" />
+        <activity android:name=".KontaktListAndFind"
+            android:parentActivityName=".KodeAuthActivity"
             ></activity>
     </application>
 

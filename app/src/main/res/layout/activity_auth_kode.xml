@@ -2,12 +2,11 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
 
-
     xmlns:tools="http://schemas.android.com/tools"
-    android:label="@string/nameauthActivityKode"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.gdg_lesson_home_work.AuthKodeActivity">
+       android:label="@string/nameauthActivityKode"
+    tools:context="com.example.gdg_lesson_home_work.KodeAuthActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"
@@ -15,9 +14,84 @@
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
         android:elevation="4dp"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
 
-       />
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:drawable/progress_indeterminate_horizontal"
+        android:gravity="top|center"
+        android:orientation="vertical"
+        android:padding="30dp"
+        android:paddingEnd="20dp"
+        android:paddingStart="20dp"
+        android:paddingTop="20dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <TextView
+            android:id="@+id/EnterKodeText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/calligraffitti"
+            android:text="Вам отправлена смс с кодом"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="18sp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="64dp" />
+
+        <EditText
+            android:id="@+id/NumberKodeEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:autoText="false"
+            android:autofillHints="Код"
+            android:ems="10"
+            android:freezesText="false"
+            android:hint="Код"
+            android:inputType="number"
+            android:textColor="@android:color/darker_gray"
+            android:textColorLink="@android:color/holo_green_dark"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkBoxUserAccept"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="10" />
+
+            <TextView
+                android:id="@+id/textViewUsrAccept"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Я принимаю Пользовательское соглашение"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/buttonEntrance"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="40dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="Войти"
+            android:textColorLink="@android:color/black"
+            android:textStyle="italic"
+            tools:layout_editor_absoluteX="132dp" />
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

@@ -3,6 +3,7 @@ package com.example.gdg_lesson_home_work;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -17,19 +18,18 @@ public class AuthorizationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_authorization);
-
+        //Объявление тулбара
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
 
+        //активация кнопки домаой в экшнбаре
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
-
 
         //объявление кнопки перехода на актвити 2
         Button nextActivityBtn = (Button) findViewById(R.id.buttonNext);
         //объявление интента 2й активити
-        final Intent startAuthKodeActivity = new Intent(this, AuthKodeActivity.class);
-
+        final Intent startAuthKodeActivity = new Intent(this, KodeAuthActivity.class);
 
         //объявление кнопок соц.сетей
         ImageButton imgbtntwitter = (ImageButton) findViewById(R.id.imgBtnTwitter);
@@ -44,9 +44,9 @@ public class AuthorizationActivity extends AppCompatActivity {
                 Uri addresstw = Uri.parse("https://twitter.com");
                 Intent openlinkIntent = new Intent(Intent.ACTION_VIEW, addresstw);
                 startActivity(openlinkIntent);
-
             }
         });
+
         //кнопка фейсбука
         imgbtnfacebook.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,6 +56,7 @@ public class AuthorizationActivity extends AppCompatActivity {
                 startActivity(openlinkIntent);
             }
         });
+
         //кнопка гугл
         imgbtngoogle.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,9 +67,19 @@ public class AuthorizationActivity extends AppCompatActivity {
             }
         });
 
+        //Обработка нажатия кнокпки перехода на 2ю активити
         nextActivityBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+//                Snackbar.make(view, "Я молодец!", Snackbar.LENGTH_SHORT)
+//                        .addCallback(new Snackbar.Callback() {
+//                            @Override
+//                            public void onDismissed(Snackbar snackbar, int event) {
+//                                startActivity(startAuthKodeActivity);
+//                            }
+//                        })
+//                        .show();
 
                 startActivity(startAuthKodeActivity);
             }
