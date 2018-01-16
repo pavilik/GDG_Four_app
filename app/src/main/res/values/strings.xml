@@ -5,4 +5,5 @@
     <string name="enterumphontextview">Введите номер телефона</string>
     <string name="textSocial">Войдите через социальную сеть</string>
     <string name="buttonNext">Продолжить</string>
+    <string name="photo_kontakt">фото</string>
 </resources>

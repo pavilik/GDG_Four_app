@@ -3,7 +3,6 @@ package com.example.gdg_lesson_home_work;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -71,16 +70,6 @@ public class AuthorizationActivity extends AppCompatActivity {
         nextActivityBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-//                Snackbar.make(view, "Я молодец!", Snackbar.LENGTH_SHORT)
-//                        .addCallback(new Snackbar.Callback() {
-//                            @Override
-//                            public void onDismissed(Snackbar snackbar, int event) {
-//                                startActivity(startAuthKodeActivity);
-//                            }
-//                        })
-//                        .show();
-
                 startActivity(startAuthKodeActivity);
             }
         });

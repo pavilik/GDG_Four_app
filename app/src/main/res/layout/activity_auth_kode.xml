@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-       android:label="@string/nameauthActivityKode"
+    android:label="@string/nameauthActivityKode"
     tools:context="com.example.gdg_lesson_home_work.KodeAuthActivity">
 
     <android.support.v7.widget.Toolbar
@@ -77,6 +77,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:gravity="center"
                 android:text="Я принимаю Пользовательское соглашение"
                 android:textAlignment="center" />
         </LinearLayout>

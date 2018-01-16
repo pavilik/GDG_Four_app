@@ -31,29 +31,25 @@ public class KontaktListAndFind extends AppCompatActivity {
         ab.setDisplayHomeAsUpEnabled(true);
         ab.setTitle("Контакты");
 
-
-        String[] myDataset = getDataSet();
+        Person[] myDataset = getDataSet();
 
         mRecyclerView = (RecyclerView) findViewById(R.id.kontakt_recycler_view);
 
         // если мы уверены, что изменения в контенте не изменят размер layout-а RecyclerView
         // передаем параметр true - это увеличивает производительность
         mRecyclerView.setHasFixedSize(true);
-
         // используем linear layout manager
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
         // создаем адаптер
         mAdapter = new RecyclerAdapter(myDataset);
         mRecyclerView.setAdapter(mAdapter);
-
-
     }
 
-    private String[] getDataSet() {
-        String[] mDataSet = new String[100];
-        for (int i = 0; i < 100; i++) {
-            mDataSet[i] = "Имя" + i;
+    private Person[] getDataSet() {
+        Person[] mDataSet = new Person[30];
+        for (int i = 0; i < mDataSet.length; i++) {
+            mDataSet[i] = new Person();
         }
         return mDataSet;
     }

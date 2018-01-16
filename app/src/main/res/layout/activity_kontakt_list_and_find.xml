@@ -21,21 +21,19 @@
     <LinearLayout
         android:id="@+id/act3Ly"
         android:layout_width="match_parent"
-        android:layout_height="498dp"
-        android:layout_marginTop="8dp"
-        android:gravity="top|center"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+
+        android:gravity="center"
         android:orientation="vertical"
-        android:padding="30dp"
-        android:paddingEnd="20dp"
-        android:paddingStart="20dp"
-        android:paddingTop="20dp"
-        app:layout_constraintTop_toBottomOf="@+id/my_toolbar"
-        tools:layout_editor_absoluteX="0dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/my_toolbar">
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:hint="Введите имя"
             android:inputType="textPersonName" />
 
@@ -43,6 +41,8 @@
             android:id="@+id/kontakt_recycler_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:scrollbars="vertical" />
 
     </LinearLayout>
