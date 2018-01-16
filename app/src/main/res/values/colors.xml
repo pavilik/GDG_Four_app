@@ -2,5 +2,8 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#4056ff</color>
+    <color name="tolbar">#4dda01</color>
+    <color name="colorForMyActionBar">#c771767b</color>
+    <color name="colorForMyActionBar2">#c745484b</color>
 </resources>
