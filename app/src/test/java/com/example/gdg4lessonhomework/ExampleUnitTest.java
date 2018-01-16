@@ -1,4 +1,4 @@
-package com.example.gdg_4_lesson_home_work;
+package com.example.gdg4lessonhomework;
 
 import org.junit.Test;
 

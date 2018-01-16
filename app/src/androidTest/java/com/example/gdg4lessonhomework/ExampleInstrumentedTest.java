@@ -1,4 +1,4 @@
-package com.example.gdg_4_lesson_home_work;
+package com.example.gdg4lessonhomework;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.gdg_4_lesson_home_work", appContext.getPackageName());
+        assertEquals("com.example.gdg4lessonhomework", appContext.getPackageName());
     }
 }
