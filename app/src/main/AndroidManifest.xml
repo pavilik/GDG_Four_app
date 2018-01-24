@@ -7,7 +7,7 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/nameauthActivity"
+        android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:screenOrientation="portrait"
         android:supportsRtl="true"
@@ -24,12 +24,6 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <activity
-            android:name=".KodeAuthActivity"
-            android:parentActivityName=".AuthorizationActivity" />
-        <activity android:name=".KontaktListAndFind"
-            android:parentActivityName=".KodeAuthActivity"
-            ></activity>
-    </application>
+         </application>
 
 </manifest>
