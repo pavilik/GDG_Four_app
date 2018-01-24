@@ -1,77 +1,95 @@
 package com.example.gdg_lesson_home_work;
 
-import android.content.Intent;
-import android.net.Uri;
+
+import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageButton;
 
 
-public class AuthorizationActivity extends AppCompatActivity {
+public class AuthorizationActivity extends AppCompatActivity implements OnActionListener {
 
 
-    protected void onCreate(Bundle savedInstanceState) {
+    @RequiresApi(api = Build.VERSION_CODES.M)
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_authorization);
-        //Объявление тулбара
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+//
+        //объявление тулбара
+        Toolbar myToolbar = findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
-
-        //активация кнопки домаой в экшнбаре
+        //активация кнопки назад и изменение цвета экшнбара
         ActionBar ab = getSupportActionBar();
-        ab.setDisplayHomeAsUpEnabled(true);
 
-        //объявление кнопки перехода на актвити 2
-        Button nextActivityBtn = (Button) findViewById(R.id.buttonNext);
-        //объявление интента 2й активити
-        final Intent startAuthKodeActivity = new Intent(this, KodeAuthActivity.class);
+        if (ab != null) {
+            ab.setTitle("Авторизация");
+            ab.setHomeButtonEnabled(true);
+            ab.setDisplayHomeAsUpEnabled(true);
+        }
 
-        //объявление кнопок соц.сетей
-        ImageButton imgbtntwitter = (ImageButton) findViewById(R.id.imgBtnTwitter);
-        ImageButton imgbtnfacebook = (ImageButton) findViewById(R.id.imgBtnFacebook);
-        ImageButton imgbtngoogle = (ImageButton) findViewById(R.id.imgBtnGoogle);
 
-        //создание слушателей всех кнопок
-        //кнопка твиттера
-        imgbtntwitter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Uri addresstw = Uri.parse("https://twitter.com");
-                Intent openlinkIntent = new Intent(Intent.ACTION_VIEW, addresstw);
-                startActivity(openlinkIntent);
+        onAction("AuthorizationFragment");
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.M)
+    @Override
+    public void onAction(String strNextFrgmtName) {
+        FragmentManager frMng = getSupportFragmentManager();
+        FragmentTransaction transaction = frMng.beginTransaction();
+        ActionBar ab = getSupportActionBar();
+
+        switch (strNextFrgmtName) {
+            case "AuthorizationFragment": {
+                if (ab != null) {
+                    ab.setBackgroundDrawable(new ColorDrawable(getColor(R.color.colorForMyActionBarZero)));
+                }
+                transaction.replace(R.id.container, new AuthorizationFragment());
             }
-        });
+            break;
 
-        //кнопка фейсбука
-        imgbtnfacebook.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Uri addressfb = Uri.parse("https://facebook.com");
-                Intent openlinkIntent = new Intent(Intent.ACTION_VIEW, addressfb);
-                startActivity(openlinkIntent);
+            case "KodeAuthAFragment": {
+                if (ab != null) {
+                    ab.setBackgroundDrawable(new ColorDrawable(getColor(R.color.colorForMyActionBar)));
+                }
+                transaction.replace(R.id.container, new KodeAuthFragment());
             }
-        });
+            break;
+            case "KontaktListAndFindFragment": {
+                if (ab != null) {
+                    ab.setTitle("Контакты");
+                    ab.setBackgroundDrawable(new ColorDrawable(getColor(R.color.colorForMyActionBar2)));
+                }
 
-        //кнопка гугл
-        imgbtngoogle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Uri addressgg = Uri.parse("https://google.com");
-                Intent openlinkIntent = new Intent(Intent.ACTION_VIEW, addressgg);
-                startActivity(openlinkIntent);
+                transaction.replace(R.id.container, new KontaktListAndFindFragment());
             }
-        });
+            break;
 
-        //Обработка нажатия кнокпки перехода на 2ю активити
-        nextActivityBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(startAuthKodeActivity);
+            default: {
+                System.out.println("Нет распознанного имени фрагмента, загрузим первый");
+                transaction.replace(R.id.container, new AuthorizationFragment());
             }
-        });
+        }
+        transaction.addToBackStack(null);
+        transaction.commit();
+
+    }
+
+    //переопределение функции нажатия в экшн баре, на кнопку "домой" навешен возврат на предыдущий фрагмент по бэкстэку транзакций фрагмент менеджера (неужели этот комментария я сам написал...хм, в любом случае, так это у меня в голове)
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                getSupportFragmentManager().popBackStack();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

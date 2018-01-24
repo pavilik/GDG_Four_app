@@ -1,5 +1,7 @@
 package com.example.gdg_lesson_home_work;
 
+import java.util.Random;
+
 /**
  * Created by Павел on 16.01.2018.
  */
@@ -8,6 +10,7 @@ public class Person {
     String name;
     String phoneNumber;
     int photo;
+    Random random = new Random();
 
     public Person() {
         name = getRandStringNameAndFamil() + " " + getRandStringNameAndFamil();
@@ -18,25 +21,23 @@ public class Person {
     // Метод генерации имени и фамилии
     String getRandStringNameAndFamil() { //генерация имени
         String symbols = "абвгдеёжзийклмнопрстуфхцчшщьыъэюя";
-        StringBuffer randString = new StringBuffer();
-        int count;
-        count = (int) (Math.random() * 12) + 3;
-        for (int j = 0; j < count; j++) {
-            randString.append(symbols.charAt((int) (Math.random() * symbols.length())));
-        }
-        if (randString.length() > 0)
-            randString.setCharAt(0, Character.toUpperCase(randString.charAt(0)));
+        StringBuilder randString = new StringBuilder();
 
+        for (int j = 0; j < (random.nextInt(11) + 3); j++) {
+            randString.append(symbols.charAt(random.nextInt(symbols.length())));
+        }
+        if (randString.length() > 0) {
+            randString.setCharAt(0, Character.toUpperCase(randString.charAt(0)));
+        }
         return randString.toString();
     }
 
     // метод генерации номера телефона
     String getRandStringPhoneNumber() { //генерация номера
-        String symbols = "0123456789";
         StringBuilder randString = new StringBuilder();
         randString.append("+7");
         for (int j = 0; j < 10; j++) {
-            randString.append(symbols.charAt((int) (Math.random() * symbols.length())));
+            randString.append(String.valueOf(random.nextInt(9)));
         }
         return randString.toString();
     }

@@ -5,8 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:label="@string/nameauthActivityKode"
-    tools:context="com.example.gdg_lesson_home_work.KodeAuthActivity">
+    android:label="@string/nameauthActivityKode">
+
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"
@@ -40,7 +40,7 @@
 
             android:layout_marginTop="50dp"
             android:fontFamily="@font/calligraffitti"
-            android:text="Вам отправлена смс с кодом"
+            android:text="@string/MsgNotifySmsTextView"
             android:textAppearance="@style/TextAppearance.AppCompat"
             android:textSize="18sp"
             tools:layout_editor_absoluteX="0dp"
@@ -51,11 +51,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:autoText="false"
-            android:autofillHints="Код"
             android:ems="10"
             android:freezesText="false"
-            android:hint="Код"
+            android:hint="@string/hintKode"
             android:inputType="number"
             android:textColor="@android:color/darker_gray"
             android:textColorLink="@android:color/holo_green_dark"
@@ -78,7 +76,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="Я принимаю Пользовательское соглашение"
+                android:text="@string/acceptUsrLicence"
                 android:textAlignment="center" />
         </LinearLayout>
 
@@ -89,7 +87,7 @@
             android:layout_marginBottom="40dp"
             android:layout_marginTop="10dp"
             android:gravity="center"
-            android:text="Войти"
+            android:text="@string/textBtnEnter"
             android:textColorLink="@android:color/black"
             android:textStyle="italic"
             tools:layout_editor_absoluteX="132dp" />
