@@ -1,16 +1,4 @@
 <resources>
-    <string name="app_name">Домашнее задание №6</string>
-    <string name="nameauthActivity">Авторизация</string>
-    <string name="nameauthActivityKode">Авторизация</string>
-    <string name="enterumphontextview">Введите номер телефона</string>
-    <string name="textSocial">Войдите через социальную сеть</string>
-    <string name="buttonNext">Продолжить</string>
-    <string name="photo_kontakt">фото</string>
-     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="SingUpTextView">ЗАРЕГИСТРИРОВАТЬСЯ</string>
-    <string name="MsgNotifySmsTextView">Вам отправлена смс с кодом</string>
-    <string name="HintEnterName">Введите имя</string>
-    <string name="acceptUsrLicence">Я принимаю Пользовательское соглашение</string>
-    <string name="textBtnEnter">Войти</string>
-    <string name="hintKode">Код</string>
+    <string name="app_name">Домашнее задание №8</string>
+
 </resources>
