@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/change_email"
+            android:icon="@android:drawable/sym_action_email"
+            android:title="@string/menuTitlePunkt1" />
+        <item
+            android:id="@+id/red_fragment"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/menuTitleRedFragment" />
+        <item
+            android:id="@+id/blank_fragment"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/menuTitleBlankFragment" />
+        <item
+            android:id="@+id/next_mng_act"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/goNextAct" />
+    </group>
+
+
+
+</menu>

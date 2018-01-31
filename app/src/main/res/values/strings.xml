@@ -1,4 +1,26 @@
 <resources>
     <string name="app_name">Домашнее задание №8</string>
+    <string name="title_activity_first_nav_draw">FirstActivityNavDraw</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="headerTextViewFirstAct">Домашнее задание №8</string>
+    <string name="emailAdressFirstAct">lyaskimasyaski@toskiboboski.com</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">blank fragment</string>
+    <string name="changeEmailAdr">Введите адрес для смены в хедере</string>
+    <string name="buttonTextFragment1">Изменить адрес</string>
+    <string name="menuTitlePunkt1">Измениеть адрес в хедере</string>
+    <string name="menuTitleRedFragment">Красный фрагмент</string>
+    <string name="menuTitleBlankFragment">Пустой фрагмент</string>
+    <string name="goNextAct">Переход на 2ю активити</string>
+    <string name="title_activity_second_bottom_nav">SecondActivityBottomNav</string>
+    <string name="title_home">1й фрагмент</string>
+    <string name="title_dashboard">2й фрагмент</string>
+    <string name="title_notifications">3й фрагмент</string>
+    <string name="textForTextViewInRedFragment">Красный Фрагмент</string>
 
 </resources>
