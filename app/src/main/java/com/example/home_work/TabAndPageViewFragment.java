@@ -23,35 +23,45 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class TabAndPageViewFragment extends Fragment  {
+public class TabAndPageViewFragment extends Fragment {
     List<Fragment> tabs = new ArrayList<>();
 
 
     public TabAndPageViewFragment() {
         // Required empty public constructor
     }
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
+        super.onCreate(savedInstanceState);
 
 
-    tabs.add(new RedFragment());
-    tabs.add(new BlankFragment());
+        tabs.add(new RedFragment());
+        tabs.add(new BlankFragment());
     }
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-View v = inflater.inflate(R.layout.fragment_tab_and_page_view, container, false);
+        View v = inflater.inflate(R.layout.fragment_tab_and_page_view, container, false);
 
         TabPagerAdapter TabSectionsPagerAdapter = new TabPagerAdapter(getChildFragmentManager());
-ViewPager viewPager = v.findViewById(R.id.tabViewPager);
-viewPager.setAdapter(TabSectionsPagerAdapter);
+        ViewPager viewPager = v.findViewById(R.id.tabViewPager);
+        viewPager.setAdapter(TabSectionsPagerAdapter);
 
 
-        TabLayout tabLayout =v.findViewById(R.id.tabLayout);
-        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        TabLayout tabLayout = v.findViewById(R.id.tabLayout);
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout) {
+            @Override
+            public void onPageSelected(int position) {
+                Fragment fragment = tabs.get(position);
+                if (fragment instanceof TitleUpdater) {
+                    ((TitleUpdater) fragment).updateActionBarTitle();
+                }
+            }
+
+        });
         tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(viewPager));
 
 
@@ -61,8 +71,8 @@ viewPager.setAdapter(TabSectionsPagerAdapter);
 
 
 
-    public class TabPagerAdapter extends FragmentPagerAdapter  {
 
+    public class TabPagerAdapter extends FragmentPagerAdapter {
 
 
         public TabPagerAdapter(FragmentManager fm) {

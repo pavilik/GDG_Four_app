@@ -10,8 +10,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 
-public class BlankFragment extends Fragment {
+public class BlankFragment extends Fragment implements TitleUpdater {
     OnActionListener listener;
+    String titleString;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -22,7 +23,8 @@ public class BlankFragment extends Fragment {
         View v =
         inflater.inflate(R.layout.fragment_blank, container, false);
        TextView textView = v.findViewById(R.id.textViewBlankFragment);
-        listener.setToolbarText(textView.getText().toString());
+        titleString = textView.getText().toString();
+        updateActionBarTitle();
 
      return v;
     }
@@ -36,4 +38,9 @@ public class BlankFragment extends Fragment {
         }
     }
 
+    @Override
+    public void updateActionBarTitle() {
+        listener.setToolbarText(titleString);
+
+    }
 }

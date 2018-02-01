@@ -83,12 +83,7 @@ public class FirstActivityNavDraw extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-//        FragmentManager fragmentManager =getSupportFragmentManager();
-//        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-
-
-        // Handle navigation view item clicks here.
         int id = item.getItemId();
 
         if (id == R.id.change_email) {
@@ -105,7 +100,7 @@ public class FirstActivityNavDraw extends AppCompatActivity
             onAction("Пустой");
 
         } else if (id == R.id.next_mng_act) {
-            setToolbarText(item.getTitle().toString());
+
             startActivity(new Intent(this, SecondActivityBottomNav.class));
 
         }
