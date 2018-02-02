@@ -19,12 +19,10 @@ public class RedFragment extends Fragment implements TitleUpdater {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v= inflater.inflate(R.layout.fragment_red, container, false);
-
+        View v = inflater.inflate(R.layout.fragment_red, container, false);
         TextView textView = v.findViewById(R.id.textViewRedFragment);
-         titleString = textView.getText().toString();
-         updateActionBarTitle();
-
+        titleString = textView.getText().toString();
+        updateActionBarTitle();
         return v;
     }
 
@@ -41,6 +39,5 @@ public class RedFragment extends Fragment implements TitleUpdater {
     @Override
     public void updateActionBarTitle() {
         listener.setToolbarText(titleString);
-
     }
 }

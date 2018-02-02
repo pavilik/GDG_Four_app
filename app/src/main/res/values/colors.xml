@@ -8,4 +8,8 @@
     <color name="colorForMyActionBar">#c771767b</color>
 
     <color name="colorForMyActionBar2">#c745484b</color>
+    <color name="zelenii">#00FF00</color>
+    <color name="sinii">#0000FF</color>
+    <color name="fioletovii">#7F00FF</color>
+
 </resources>

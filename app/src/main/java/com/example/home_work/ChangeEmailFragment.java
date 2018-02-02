@@ -15,41 +15,34 @@ import android.widget.TextView;
  * A simple {@link Fragment} subclass.
  */
 public class ChangeEmailFragment extends Fragment {
-OnActionListener listener;
-
-
+    OnActionListener listener;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-                View v = inflater.inflate(R.layout.fragment_change_email, container, false);
+        View v = inflater.inflate(R.layout.fragment_change_email, container, false);
         Button bntChngEmail = v.findViewById(R.id.goChangeEmailFramment1);
-   //   TextView textView = v.findViewById(R.id.enterEmailtextView);
-    //  listener.setToolbarText(textView.getText().toString());
+        //   TextView textView = v.findViewById(R.id.enterEmailtextView);
+        //  listener.setToolbarText(textView.getText().toString());
 
-        bntChngEmail.setOnClickListener(new View.OnClickListener(){
+        bntChngEmail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-listener.onAction("changeEmailAccept");
-
-
+                listener.onAction("changeEmailAccept");
             }
-
-
         });
         return v;
     }
 
     @Override
     public void onAttach(Context context) {
-               super.onAttach(context);
-               try {
-                       listener = (OnActionListener) context;
-               } catch (ClassCastException e) {
-                        throw new ClassCastException(context.toString() + "must implement OnActionListener");
-                    }
-            }
+        super.onAttach(context);
+        try {
+            listener = (OnActionListener) context;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(context.toString() + "must implement OnActionListener");
+        }
+    }
 }

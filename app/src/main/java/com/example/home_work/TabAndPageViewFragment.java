@@ -60,16 +60,12 @@ public class TabAndPageViewFragment extends Fragment {
                     ((TitleUpdater) fragment).updateActionBarTitle();
                 }
             }
-
         });
         tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(viewPager));
-
 
         // Inflate the layout for this fragment
         return v;
     }
-
-
 
 
     public class TabPagerAdapter extends FragmentPagerAdapter {

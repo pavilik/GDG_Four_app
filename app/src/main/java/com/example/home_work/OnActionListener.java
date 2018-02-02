@@ -5,6 +5,7 @@ package com.example.home_work;
  */
 
 interface OnActionListener {
-     void onAction(String strAction);
-     void setToolbarText (String stringTextToolbar);
+    void onAction(String strAction);
+
+    void setToolbarText(String stringTextToolbar);
 }

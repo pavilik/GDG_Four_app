@@ -5,5 +5,5 @@ package com.example.home_work;
  */
 
 interface TitleUpdater {
-   void updateActionBarTitle ();
+    void updateActionBarTitle();
 }
