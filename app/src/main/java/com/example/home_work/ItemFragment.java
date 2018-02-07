@@ -6,14 +6,20 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Layout;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
-import com.example.home_work.dummy.DummyContent;
-import com.example.home_work.dummy.DummyContent.DummyItem;
 
 import java.util.List;
+
+import butterknife.BindView;
+import butterknife.OnClick;
 
 /**
  * A fragment representing a list of Items.
@@ -22,6 +28,7 @@ import java.util.List;
  * interface.
  */
 public class ItemFragment extends Fragment {
+
 
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
@@ -36,15 +43,15 @@ public class ItemFragment extends Fragment {
     public ItemFragment() {
     }
 
-    // TODO: Customize parameter initialization
-    @SuppressWarnings("unused")
-    public static ItemFragment newInstance(int columnCount) {
-        ItemFragment fragment = new ItemFragment();
-        Bundle args = new Bundle();
-        args.putInt(ARG_COLUMN_COUNT, columnCount);
-        fragment.setArguments(args);
-        return fragment;
-    }
+//    // TODO: Customize parameter initialization
+//    @SuppressWarnings("unused")
+//    public static ItemFragment newInstance(int columnCount) {
+//        ItemFragment fragment = new ItemFragment();
+//        Bundle args = new Bundle();
+//        args.putInt(ARG_COLUMN_COUNT, columnCount);
+//        fragment.setArguments(args);
+//        return fragment;
+//    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -60,6 +67,8 @@ public class ItemFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_item_list, container, false);
 
+
+
         // Set the adapter
         if (view instanceof RecyclerView) {
             Context context = view.getContext();
@@ -69,9 +78,35 @@ public class ItemFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyItemRecyclerViewAdapter(DummyContent.ITEMS, mListener));
+
+
+            recyclerView.setAdapter(new MyItemRecyclerViewAdapter(mListener.onListFragmentInteraction(), mListener));
+//
+//            recyclerView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
+//                @Override
+//                public boolean onInterceptTouchEvent(RecyclerView rv, MotionEvent e) {
+//                    Toast.makeText(rv.getContext(), "НажатиеОдин " , Toast.LENGTH_SHORT).show();
+//                    return false;
+//                }
+//
+//                @Override
+//                public void onTouchEvent(RecyclerView rv, MotionEvent e) {
+//
+//                }
+//
+//                @Override
+//                public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
+//
+//                }
+//            });
+
+
+
         }
-        return view;
+
+
+
+     return view;
     }
 
 
@@ -104,6 +139,8 @@ public class ItemFragment extends Fragment {
      */
     public interface OnListFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onListFragmentInteraction(DummyItem item);
+        List <CardFIONitem> onListFragmentInteraction();
+
+
     }
 }

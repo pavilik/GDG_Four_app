@@ -1,4 +1,13 @@
 <resources>
-    <string name="app_name">Домашнее задание №8</string>
+    <string name="app_name">Домашнее задание №9</string>
+    <string name="buttonAddInActionBar">Добавить</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Фамилия">Фамилия</string>
+    <string name="Имя">Имя</string>
+    <string name="Отчество">Отчество</string>
+    <string name="Телефон">Телефон</string>
+    <string name="textViewEmptyList">Список пуст</string>
 
 </resources>

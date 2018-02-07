@@ -5,7 +5,7 @@
     <color name="colorAccent">#4056ff</color>
     <color name="tolbar">#4dda01</color>
     <color name="colorForMyActionBarZero">#c7cbd4de</color>
-    <color name="colorForMyActionBar">#c771767b</color>
+    <color name="colorForRecyclerView">#c771767b</color>
 
-    <color name="colorForMyActionBar2">#c745484b</color>
+    <color name="colorForCardBackground">#c745484b</color>
 </resources>
