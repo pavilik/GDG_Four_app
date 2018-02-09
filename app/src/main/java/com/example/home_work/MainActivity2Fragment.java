@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -18,7 +19,8 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
 
-public class MainActivity2Fragment extends AppCompatActivity implements ItemFragment.OnListFragmentInteractionListener, Fragment2InputFIO.OnFragmentInteractionListener {
+public class MainActivity2Fragment extends AppCompatActivity implements ItemFragment.OnListFragmentInteractionListener, Fragment2InputFIO.OnFragmentInteractionListener, MyItemRecyclerViewAdapter.OnItemClickListener{
+    private static final String TAG = "!!!!!!!!!!!!!!!!!!!!!!!";
     @BindView(R.id.imageButton)
     ImageButton imgBtnPlus;
 
@@ -75,4 +77,13 @@ public class MainActivity2Fragment extends AppCompatActivity implements ItemFrag
 
     }
 
+    @Override
+    public void onItemClick(CardFIONitem cardItem) {
+        Log.d(TAG, "onClick " +cardItem.getFamili());
+    }
+
+    @Override
+    public void onClick(View view) {
+
+    }
 }

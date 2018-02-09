@@ -35,6 +35,7 @@ public class ItemFragment extends Fragment {
     // TODO: Customize parameters
     private int mColumnCount = 1;
     private OnListFragmentInteractionListener mListener;
+    private MyItemRecyclerViewAdapter.OnItemClickListener onItemClickListener;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -81,7 +82,14 @@ public class ItemFragment extends Fragment {
 
 
             recyclerView.setAdapter(new MyItemRecyclerViewAdapter(mListener.onListFragmentInteraction(), mListener));
-//
+
+            recyclerView.setOnClickListener(onItemClickListener);
+
+
+
+
+
+            //
 //            recyclerView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
 //                @Override
 //                public boolean onInterceptTouchEvent(RecyclerView rv, MotionEvent e) {
