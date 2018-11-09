@@ -35,9 +35,14 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext())
+       View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.fragment_item, parent, false);
+        //инфлейтим другой лайоут для понимания перехвата касания в кардвью когда нет текстЕдит
+//        View view = LayoutInflater.from(parent.getContext())
+//                .inflate(R.layout.item_card, parent, false);
          ButterKnife.bind(this,view);
+        view.setOnClickListener(itemClickListener);
+
 
         return new ViewHolder(view);
     }
@@ -60,10 +65,29 @@ holder.bind(itemValues.get(position),itemClickListener);
         holder.otchestvoCard.setEnabled(false);
         holder.telefonCard.setEnabled(false);
 
+
+        ///уставновка для нового инфлейта внутрь кард вью
+//        holder.familCardtextView.setText(itemValues.get(position).getFamili());
+//       holder.nameCardtextView.setText(itemValues.get(position).getName());
+//        holder.otchestvoCardtextView.setText(itemValues.get(position).getOtchestvo());
+//        holder.telefonCardtextView.setText(itemValues.get(position).getNumTel());
+        ////
+
 holder.mView.setBackgroundResource(R.color.colorForRecyclerView);
+       holder.anyCard.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               Toast.makeText(view.getContext(), "!!!!!!!!!!!!!!!!!!! " +position, Toast.LENGTH_SHORT).show();
+           }
+       });
 
 
-
+//holder.mView.setOnClickListener(new View.OnClickListener() {
+//    @Override
+//    public void onClick(View view) {
+//        itemClickListener.onItemClick(itemValues.get(position));
+//    }
+//});
 
 //holder.anyCard.setClickable(true);
 //holder.anyCard.setFocusableInTouchMode(true);
@@ -96,6 +120,8 @@ holder.mView.setBackgroundResource(R.color.colorForRecyclerView);
 //
 //    }
 //});
+
+
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -106,7 +132,9 @@ holder.mView.setBackgroundResource(R.color.colorForRecyclerView);
 
 
                   Toast.makeText(v.getContext(), "Нажатие! " +position, Toast.LENGTH_SHORT).show();
-                    holderListener.onListFragmentInteraction();
+
+                  //не ясно для чего этот метод вызывать, т.к. обрабатывается клик по фрагменту
+                  // holderListener.onListFragmentInteraction();
                 }
             }
         });
@@ -132,6 +160,20 @@ holder.mView.setBackgroundResource(R.color.colorForRecyclerView);
         @BindView(R.id.cardView)
 
         public CardView anyCard;
+
+
+//        @BindView(R.id.CardViewToRecyclerView)
+//        public  CardView anyRecyclerViewCardView;
+//
+//        @BindView(R.id.textView)
+//        public    TextView familCardtextView;
+//        @BindView(R.id.textView2)
+//        public   TextView nameCardtextView;
+//        @BindView(R.id.textView3)
+//        public    TextView otchestvoCardtextView;
+//        @BindView(R.id.textView4)
+//        public   TextView telefonCardtextView;
+//
 
 
 
@@ -172,7 +214,7 @@ holder.mView.setBackgroundResource(R.color.colorForRecyclerView);
                 public void onClick(View view) {
                     itemClickListener.onItemClick(cfioItem);
                     Log.d(TAG, "onClick " +getAdapterPosition()+ " " + mItem);
-
+                    Toast.makeText(view.getContext(), "Нажатиеfsdlkhfshda " , Toast.LENGTH_SHORT).show();
                 }
             });
         }

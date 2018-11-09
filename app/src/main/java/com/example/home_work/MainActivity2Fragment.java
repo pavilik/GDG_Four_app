@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -49,6 +50,7 @@ public class MainActivity2Fragment extends AppCompatActivity implements ItemFrag
 
     }
 
+
     @Override
 
     public List<CardFIONitem> onListFragmentInteraction() {
@@ -62,6 +64,7 @@ public class MainActivity2Fragment extends AppCompatActivity implements ItemFrag
 
         goToNextFragment(new ItemFragment());
     }
+
 
 
     private void goToNextFragment(Fragment fragment) {

@@ -9,5 +9,6 @@
     <string name="Отчество">Отчество</string>
     <string name="Телефон">Телефон</string>
     <string name="textViewEmptyList">Список пуст</string>
+    <string name="btnOk">ОК</string>
 
 </resources>

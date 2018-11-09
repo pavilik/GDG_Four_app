@@ -7,6 +7,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Layout;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -21,13 +22,15 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.OnClick;
 
+import static android.content.ContentValues.TAG;
+
 /**
  * A fragment representing a list of Items.
  * <p/>
  * Activities containing this fragment MUST implement the {@link OnListFragmentInteractionListener}
  * interface.
  */
-public class ItemFragment extends Fragment {
+public class ItemFragment extends Fragment implements MyItemRecyclerViewAdapter.OnItemClickListener{
 
 
     // TODO: Customize parameter argument names
@@ -133,6 +136,17 @@ public class ItemFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onItemClick(CardFIONitem cardItem) {
+        Log.d(TAG, "onClick " +cardItem.toString());
+
+    }
+
+    @Override
+    public void onClick(View view) {
+
     }
 
     /**
