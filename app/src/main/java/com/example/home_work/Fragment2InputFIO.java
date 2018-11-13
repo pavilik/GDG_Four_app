@@ -1,7 +1,6 @@
 package com.example.home_work;
 
 import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -10,9 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import butterknife.BindArray;
 import butterknife.BindView;
-import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
@@ -74,10 +71,11 @@ public class Fragment2InputFIO extends Fragment {
     }
 
     @Override
-    public void onViewCreated (View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view,savedInstanceState);
-        unbider = ButterKnife.bind(this,view);
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        unbider = ButterKnife.bind(this, view);
     }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,12 +84,13 @@ public class Fragment2InputFIO extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-    @OnClick(R.id.fragment2BntAcsept)
-    void   onButtonPressed()
-    {
-        CardFIONitem cardFIONitem = new CardFIONitem( nameItem.getText().toString(),familItem.getText().toString(), ot4estvoItem.getText().toString(), numtelItem.getText().toString());
 
-        mListener.onFragmentInteraction(cardFIONitem);
+    @OnClick(R.id.fragment2BntAcsept)
+    void onButtonPressed() {
+//для тестового задания эта кнопка не нужна
+        //  CardFIONitem cardFIONitem = new CardFIONitem( nameItem.getText().toString(),familItem.getText().toString(), ot4estvoItem.getText().toString(), numtelItem.getText().toString());
+        //mListener.onFragmentInteraction(cardFIONitem);
+
     }
 
     @Override
@@ -131,7 +130,7 @@ public class Fragment2InputFIO extends Fragment {
     }
 
     @Override
-    public  void  onDestroyView(){
+    public void onDestroyView() {
 
         super.onDestroyView();
         unbider.unbind();

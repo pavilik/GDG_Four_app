@@ -6,21 +6,12 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.Layout;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
-
 
 import java.util.List;
-
-import butterknife.BindView;
-import butterknife.OnClick;
 
 import static android.content.ContentValues.TAG;
 
@@ -30,7 +21,7 @@ import static android.content.ContentValues.TAG;
  * Activities containing this fragment MUST implement the {@link OnListFragmentInteractionListener}
  * interface.
  */
-public class ItemFragment extends Fragment implements MyItemRecyclerViewAdapter.OnItemClickListener{
+public class ItemFragment extends Fragment implements MyItemRecyclerViewAdapter.OnItemClickListener {
 
 
     // TODO: Customize parameter argument names
@@ -72,7 +63,6 @@ public class ItemFragment extends Fragment implements MyItemRecyclerViewAdapter.
         View view = inflater.inflate(R.layout.fragment_item_list, container, false);
 
 
-
         // Set the adapter
         if (view instanceof RecyclerView) {
             Context context = view.getContext();
@@ -89,35 +79,10 @@ public class ItemFragment extends Fragment implements MyItemRecyclerViewAdapter.
             recyclerView.setOnClickListener(onItemClickListener);
 
 
-
-
-
-            //
-//            recyclerView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
-//                @Override
-//                public boolean onInterceptTouchEvent(RecyclerView rv, MotionEvent e) {
-//                    Toast.makeText(rv.getContext(), "НажатиеОдин " , Toast.LENGTH_SHORT).show();
-//                    return false;
-//                }
-//
-//                @Override
-//                public void onTouchEvent(RecyclerView rv, MotionEvent e) {
-//
-//                }
-//
-//                @Override
-//                public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
-//
-//                }
-//            });
-
-
-
         }
 
 
-
-     return view;
+        return view;
     }
 
 
@@ -140,7 +105,7 @@ public class ItemFragment extends Fragment implements MyItemRecyclerViewAdapter.
 
     @Override
     public void onItemClick(CardFIONitem cardItem) {
-        Log.d(TAG, "onClick " +cardItem.toString());
+        Log.d(TAG, "onClick " + cardItem.toString());
 
     }
 
@@ -161,7 +126,7 @@ public class ItemFragment extends Fragment implements MyItemRecyclerViewAdapter.
      */
     public interface OnListFragmentInteractionListener {
         // TODO: Update argument type and name
-        List <CardFIONitem> onListFragmentInteraction();
+        List<CardFIONitem> onListFragmentInteraction();
 
 
     }

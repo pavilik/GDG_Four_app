@@ -6,23 +6,36 @@
     android:layout_height="match_parent">
 
 
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:padding="2dp">
 
-        <ImageButton
-            android:id="@+id/imageButton"
+        <!--<ImageButton-->
+            <!--android:id="@+id/imageButton"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:contentDescription="@string/buttonAddInActionBar"-->
+            <!--android:src="@android:drawable/ic_menu_gallery"-->
+            <!--android:visibility="invisible"-->
+            <!--tools:src="@color/vk_share_blue_color" />-->
+
+        <CheckBox
+            android:id="@+id/checkBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:contentDescription="@string/buttonAddInActionBar"
-            app:srcCompat="@android:drawable/ic_menu_add" />
+            android:text="убрать без фото" />
+        <Button
+            android:id="@+id/buttonSort"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Сделать прямую сортировку по ДР" />
 
     </android.support.v7.widget.Toolbar>
+
+
 
 
     <android.support.constraint.ConstraintLayout
@@ -49,5 +62,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </android.support.constraint.ConstraintLayout>
+
+
 
 </android.support.design.widget.CoordinatorLayout>

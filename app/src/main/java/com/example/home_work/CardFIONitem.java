@@ -1,37 +1,40 @@
 package com.example.home_work;
 
+import java.util.Date;
+
 /**
  * Created by Павел on 06.02.2018.
  */
 
 public class CardFIONitem {
-    private String name;
-    private String famili;
-    private String otchestvo;
-    private String numTel;
+    private String hasPhoto;//поле наличия фото 1-есть, 0-нет фото
+    private String nameFamili;//имя друга
+    private Date bdate;//Дата рождения если есть, получение данного поля условное см. разбор респонса от ВК
+    private String numId;//идентификатор друга в ВК
 
 
-    public CardFIONitem(String inputName, String inputFamil, String inputOtchestvo, String inputNumTelel) {
-        name = inputName;
-        famili = inputFamil;
-        otchestvo = inputOtchestvo;
-        numTel = inputNumTelel;
+    public CardFIONitem(String inputHasPhoto, String inputNameFamil, Date inputBdate, String inputNumId) {
+        hasPhoto = inputHasPhoto;
+        nameFamili = inputNameFamil;
+        bdate = inputBdate;
+        numId = inputNumId;
     }
 
-    public String getFamili() {
-        return famili;
+
+    public String getHasPhoto() {
+        return hasPhoto;
     }
 
-    public String getName() {
-        return name;
+    public String getNameFamili() {
+        return nameFamili;
     }
 
-    public String getNumTel() {
-        return numTel;
+    public Date getBdate() {
+        return bdate;
     }
 
-    public String getOtchestvo() {
-        return otchestvo;
+    public String getNumId() {
+        return numId;
     }
 
 }

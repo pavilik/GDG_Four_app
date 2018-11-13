@@ -1,14 +1,15 @@
 <resources>
-    <string name="app_name">Домашнее задание №9</string>
-    <string name="buttonAddInActionBar">Добавить</string>
+    <string name="app_name">Тестовое задание</string>
+    <string name="buttonAddInActionBar">сортировка</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="Фамилия">Фамилия</string>
-    <string name="Имя">Имя</string>
-    <string name="Отчество">Отчество</string>
-    <string name="Телефон">Телефон</string>
+    <string name="nameFamilia">Имя друга</string>
+    <string name="hasPhoto">Наличие фото(1-есть,0-нет)</string>
+    <string name="bDateFriend">Дата рождения \n(0002-скрыт год,0001-скрыт ДР)</string>
+    <string name="IdVKUser">Id пользователя ВК</string>
     <string name="textViewEmptyList">Список пуст</string>
     <string name="btnOk">ОК</string>
+    <integer name="com_vk_sdk_AppId">6746273</integer>
 
 </resources>

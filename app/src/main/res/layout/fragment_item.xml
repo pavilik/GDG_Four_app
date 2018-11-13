@@ -30,7 +30,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="@string/Фамилия" />
+                    android:text="@string/nameFamilia" />
 
                 <EditText
                     android:id="@+id/famil"
@@ -42,7 +42,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="@string/Имя" />
+                    android:text="@string/hasPhoto" />
 
                 <EditText
                     android:id="@+id/imja"
@@ -54,7 +54,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="@string/Отчество" />
+                    android:text="@string/bDateFriend" />
 
                 <EditText
                     android:id="@+id/ot4estvo"
@@ -66,7 +66,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="@string/Телефон" />
+                    android:text="@string/IdVKUser" />
 
                 <EditText
                     android:id="@+id/telefon"
